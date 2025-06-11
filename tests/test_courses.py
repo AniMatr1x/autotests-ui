@@ -31,6 +31,7 @@ def test_empty_courses_list():
         # Сохраняем состояние браузера (куки и localStorage) в файл для дальнейшего использования
         context.storage_state(path="browser-state.json")
 
+        # Снова открываем браузер с сохранным контекстом
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False)
         context = browser.new_context(storage_state="browser-state.json")  # Указываем файл с сохраненным состоянием
